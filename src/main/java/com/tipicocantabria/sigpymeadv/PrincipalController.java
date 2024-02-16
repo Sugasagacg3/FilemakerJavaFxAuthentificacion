@@ -23,6 +23,9 @@ public class PrincipalController {
     private TextField idUsuario;
 
     @FXML
+    private Label error;
+
+    @FXML
     private PasswordField idPassword;
 
     @FXML
@@ -35,6 +38,8 @@ public class PrincipalController {
         con = Conexion.conexionFilemaer();
         if(Conexion.estado=="si") {
             leerVentana("pantallaPrincipal.fxml", event);
+        }else{
+            error.setText("Usuario o contraseña Incorrectas");
         }
 
     }
